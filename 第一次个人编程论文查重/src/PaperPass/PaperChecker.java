@@ -58,6 +58,7 @@ public class PaperChecker {
             reader.close();   //关闭文档
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("文本地址出错啦！");
         }
         return divisionArray;
     }
