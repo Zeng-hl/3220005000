@@ -142,7 +142,7 @@ public class fourArithmetics {
         if(theInput.equals("OK")) {
             int j = 0;
             try {
-                FileReader fr = new FileReader("C://Users//Administrator//Desktop//fourArithmetics//answerFile.txt");   //读取文件数据
+                FileReader fr = new FileReader("D://myCourses//NSEworkGitHub//结对编程//fourArithmetics//answerFile.txt");   //读取文件数据
                 BufferedReader br;
                 String s;
                 for(br = new BufferedReader(fr); (s = br.readLine()) != null; j++) {   //s为读取答案文件的每一行数据，记入解答数组array
@@ -198,15 +198,18 @@ public class fourArithmetics {
         int totalRight = 0;
         int totalWrong = 0;
         inputAnswer = commitAnswer(n);
+
         for(int j=0; j<n; j++) {   //比较答案
             if(inputAnswer[j].equals(answer[j])) {
                 rightArithetic[j] = j + 1;
                 totalRight++;
             } else {
                 wrongArithetic[j] = j + 1;
+                System.out.println("错误数组："+wrongArithetic[j]);
                 totalWrong++;
             }
         }
+
         //成绩文件
         FileWriter fgra = null;
         try {
@@ -225,9 +228,11 @@ public class fourArithmetics {
         pw.println(")");
         pw.print("Wrong:" + totalWrong + "(");  //写入错误成绩
         for(int j=0; j <= n; j++) {
-            pw.print(wrongArithetic[j] + ",");
+            if (wrongArithetic[j] != 0) {
+                pw.print(wrongArithetic[j] + ",");
+            }
         }
-        pw.print(")");
+        pw.println(")");
         System.out.println("成绩已出，请在本目录Grade.txt文档中查看成绩！");
         pw.flush();
         try {
