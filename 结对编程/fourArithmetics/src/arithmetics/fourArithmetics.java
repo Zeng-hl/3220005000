@@ -164,7 +164,8 @@ public class fourArithmetics {
         int n = sc.nextInt();
         System.out.println("请输入题目中的数值范围：");
         int r = sc.nextInt();
-        System.out.println("自动生成题目如下，请将答案填入本目录下的文档（每个答案之间回车分隔）~完成后输入OK提交答案");
+        System.out.println("自动生成题目如下。请将答案填入本目录下的answerFile.txt（每个答案之间回车分隔）~");
+        System.out.println("完成后输入OK提交答案！");
 
         Random random = new Random();    //生成随机数
         int num1,num2,num3,num4;
